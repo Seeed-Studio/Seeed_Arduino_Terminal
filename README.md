@@ -2,7 +2,7 @@
 This library provides a printing function similar to that of the terminal for the LCD screen.
 
 ### Reference
-- Based on ![TFT_eSPI LCD Library]("https://github.com/Seeed-Studio/Seeed_Arduino_LCD")
+- Based on [Seeed_Arduino_LCD](https://github.com/Seeed-Studio/Seeed_Arduino_LCD)
 
 ### Feature
 - Print decimal, hex, bin number and string
@@ -10,12 +10,14 @@ This library provides a printing function similar to that of the terminal for th
 - Set background and foreground color
 
 ### Get Start
+- Download those libraries.
 ```bash
 cd Arduino/libraries
 git clone https://github.com/Seeed-Studio/Seeed_Arduino_LCD
 git clone https://github.com/Seeed-Studio/Seeed_Arduino_Terminal
 ```
 
+- Hello world, YES!
 ```C++
 #include<grove_terminal.h>
 
