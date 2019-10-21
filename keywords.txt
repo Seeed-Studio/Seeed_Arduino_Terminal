@@ -1,0 +1,24 @@
+####################################################
+# Syntax Coloring Map For Grove Terminal Library
+####################################################
+
+####################################################
+# Datatypes (KEYWORD1)
+####################################################
+
+grove_terminal	KEYWORD1
+
+####################################################
+# Methods and Functions (KEYWORD2)
+####################################################
+print		KEYWORD2
+println		KEYWORD2
+begin		KEYWORD2
+begin		KEYWORD2
+turn_on		KEYWORD2
+turn_off	KEYWORD2
+foreground	KEYWORD2
+background	KEYWORD2
+printf		KEYWORD2
+flush		KEYWORD2
+auto_flush	KEYWORD2
