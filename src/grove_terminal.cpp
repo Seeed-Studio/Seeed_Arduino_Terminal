@@ -53,7 +53,7 @@ void grove_terminal::begin(bool open, uint8_t direction) {
         lcd_print_column_count = LCD_PRINT_COLUMN_COUNT;
     }
     else {
-        lcd_print_row_count = (LCD_WIDTH / LCD_PRINT_LINE_HEIGHT);
+        lcd_print_row_count = (LCD_WIDTH / LCD_PRINT_LINE_HEIGHT + 1);
         lcd_print_column_count = (LCD_HEIGHT / LCD_PRINT_LINE_WIDTH);
     }
 }
@@ -115,11 +115,7 @@ void grove_terminal::print(const char* str, uint32_t length){
         flush();
     }
 }
-void grove_terminal::print(int32_t value, uint8_t base) {
-    char buf[33];
-    itoa(value, buf, base);
-    print(buf);
-}
+
 void grove_terminal::print(double value, uint8_t precison) {
     char fmt[10];
     char buf[33];
@@ -130,10 +126,6 @@ void grove_terminal::print(double value, uint8_t precison) {
 void grove_terminal::print(char value) {
     char buf[] = { value, '\0' };
     print(buf);
-}
-void grove_terminal::println(int32_t value, uint8_t base) {
-    print(value, base);
-    print("\n");
 }
 void grove_terminal::println(double value, uint8_t precison) {
     print(value, precison);
