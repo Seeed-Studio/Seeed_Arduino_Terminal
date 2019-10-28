@@ -1,5 +1,4 @@
-#ifndef GROVE_UI_TERMINAL
-#define GROVE_UI_TERMINAL
+#pragma once
 #include<stdint.h>
 #include"itoa_plus.h"
 #define gen_print(type,...)                     \
@@ -21,8 +20,8 @@ public:
     void begin(bool open = true, uint8_t direction = 1);
     void turn_on();
     void turn_off();
-    void foreground(uint16_t color);
-    void background(uint16_t color);
+    void global_foreground(uint16_t color);
+    void global_background(uint16_t color);
     gen_print(uint8_t);
     gen_print(uint16_t);
     gen_print(uint32_t);
@@ -53,4 +52,4 @@ public:
 };
 
 #undef gen_print
-#endif
+#undef gen_println

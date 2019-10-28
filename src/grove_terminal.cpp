@@ -65,12 +65,12 @@ void grove_terminal::turn_off() {
     pinMode(LCD_BACKLIGHT, OUTPUT);
     digitalWrite(LCD_BACKLIGHT, LOW);
 }
-void grove_terminal::foreground(uint16_t color) {
+void grove_terminal::global_foreground(uint16_t color) {
     fore = color;
     tft.setTextColor(fore, back);
     flush();
 }
-void grove_terminal::background(uint16_t color) {
+void grove_terminal::global_background(uint16_t color) {
     back = color;
     tft.fillScreen(back);
     tft.setTextColor(fore, back);
