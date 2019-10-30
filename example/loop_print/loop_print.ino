@@ -6,8 +6,8 @@ grove_terminal terminal;
 int32_t        value = 0;
 void setup(){
     terminal.begin();
-    terminal.foreground(TFT_WHITE);
-    terminal.background(TFT_BLUE);
+    terminal.global_foreground(TFT_WHITE);
+    terminal.global_background(TFT_BLUE);
 }
 
 void loop(){
