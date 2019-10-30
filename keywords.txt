@@ -17,8 +17,8 @@ begin		KEYWORD2
 begin		KEYWORD2
 turn_on		KEYWORD2
 turn_off	KEYWORD2
-foreground	KEYWORD2
-background	KEYWORD2
+global_foreground	KEYWORD2
+global_background	KEYWORD2
 printf		KEYWORD2
 flush		KEYWORD2
 auto_flush	KEYWORD2
