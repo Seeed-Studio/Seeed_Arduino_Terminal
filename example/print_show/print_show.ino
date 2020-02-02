@@ -5,7 +5,7 @@
 grove_terminal terminal;
 int32_t        value = 0;
 int32_t        skip = 0;
-void setup(){
+void setup() {
     terminal.begin(true, 0);
     terminal.global_foreground(TFT_WHITE);
     terminal.global_background(TFT_BLUE);
@@ -29,6 +29,6 @@ void setup(){
     terminal.printf("hello %d!\n", 2020);
 }
 
-void loop(){
-    
+void loop() {
+
 }

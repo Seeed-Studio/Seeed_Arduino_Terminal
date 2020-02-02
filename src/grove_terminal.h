@@ -16,7 +16,7 @@
     }
 
 class grove_terminal {
-public:
+  public:
     void begin(bool open = true, uint8_t direction = 1);
     void turn_on();
     void turn_off();
@@ -31,8 +31,8 @@ public:
     gen_print(int32_t);
     gen_print(int64_t);
     void print(char value);
-    void print(const char * str);
-    void print(const char * str, uint32_t length);
+    void print(const char* str);
+    void print(const char* str, uint32_t length);
     void print(double value, uint8_t precison = 2);
     gen_println(uint8_t);
     gen_println(uint16_t);
@@ -44,9 +44,9 @@ public:
     gen_println(int64_t);
     void println(char value);
     void println(double value, uint8_t precison = 2);
-    void println(const char * str);
-    void println(const char * str, uint32_t length);
-    void printf(const char * fmt, ...);
+    void println(const char* str);
+    void println(const char* str, uint32_t length);
+    void printf(const char* fmt, ...);
     void auto_flush(bool enable);
     void flush();
 };

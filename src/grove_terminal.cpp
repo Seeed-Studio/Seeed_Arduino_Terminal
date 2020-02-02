@@ -51,13 +51,12 @@ void grove_terminal::begin(bool open, uint8_t direction) {
     if (direction & 1) {
         lcd_print_row_count = LCD_PRINT_ROW_COUNT;
         lcd_print_column_count = LCD_PRINT_COLUMN_COUNT;
-    }
-    else {
+    } else {
         lcd_print_row_count = (LCD_WIDTH / LCD_PRINT_LINE_HEIGHT + 1);
         lcd_print_column_count = (LCD_HEIGHT / LCD_PRINT_LINE_WIDTH);
     }
 }
-void grove_terminal::turn_on(){
+void grove_terminal::turn_on() {
     pinMode(LCD_BACKLIGHT, OUTPUT);
     digitalWrite(LCD_BACKLIGHT, HIGH);
 }
@@ -77,28 +76,28 @@ void grove_terminal::global_background(uint16_t color) {
     flush();
 }
 
-void grove_terminal::print(const char* str){
+void grove_terminal::print(const char* str) {
     print(str, strlen(str));
 }
-void grove_terminal::print(const char* str, uint32_t length){
-    char * row = current_column == lcd_print_column_count ? break_row() : get_row(current_row);
+void grove_terminal::print(const char* str, uint32_t length) {
+    char* row = current_column == lcd_print_column_count ? break_row() : get_row(current_row);
     for (uint32_t i = 0; str[i] != '\0' && i < length; i++) {
         switch (str[i]) {
-        case '\t':
-        case '\v':
-            continue;
-        case '\r':
-            if (str[i + 1] == '\n'){
-                i += 1;
-            }
+            case '\t':
+            case '\v':
+                continue;
+            case '\r':
+                if (str[i + 1] == '\n') {
+                    i += 1;
+                }
             //no break
-        case '\n':
-            row[current_column] = '\0';
-            current_column = lcd_print_column_count;
-            break;
-        default:
-            row[current_column++] = str[i];
-            break;
+            case '\n':
+                row[current_column] = '\0';
+                current_column = lcd_print_column_count;
+                break;
+            default:
+                row[current_column++] = str[i];
+                break;
         }
         if (current_column == lcd_print_column_count) {
             if (str[i] != '\n') {
@@ -109,9 +108,9 @@ void grove_terminal::print(const char* str, uint32_t length){
             }
         }
     }
-    row[current_column] = '\0'; 
+    row[current_column] = '\0';
 
-    if (::auto_flush){
+    if (::auto_flush) {
         flush();
     }
 }
@@ -151,7 +150,7 @@ void grove_terminal::printf(const char* fmt, ...) {
     print(buf);
     va_end(ap);
 }
-void grove_terminal::auto_flush(bool enable){
+void grove_terminal::auto_flush(bool enable) {
     ::auto_flush = enable;
 }
 void grove_terminal::flush() {
@@ -163,7 +162,7 @@ void grove_terminal::flush() {
         index = current_row + 1;
         row_count = lcd_print_row_count;
     }
-    while (i < row_count){
+    while (i < row_count) {
         if (index == lcd_print_row_count) {
             index = 0;
         }
