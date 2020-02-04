@@ -1,4 +1,4 @@
-# Seeed_Arduino_Terminal
+# Seeed_Arduino_Terminal  [![Build Status](https://travis-ci.com/Seeed-Studio/Seeed_Arduino_Terminal.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Seeed_Arduino_Terminal)
 This library provides a printing function similar to that of the terminal for the LCD screen.
 
 ### Reference
